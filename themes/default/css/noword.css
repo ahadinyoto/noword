@@ -1,0 +1,238 @@
+/* Navigation */
+
+#nav {
+    /* 
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    */
+
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    box-shadow: 3px 3px 3px rgba(0,0,0,.5);
+    -moz-box-shadow: 3px 3px 3px rgba(0,0,0,.5);
+    -webkit-box-shadow: 3px 3px 3px rgba(0,0,0,.5);
+    height: 34px;
+    margin: 10px 0 10px 0;
+
+}
+
+#nav ul {
+    margin-right: auto;
+    margin-left: auto;
+	padding: 5px; 
+	/* margin: 10px 0; */
+	list-style: none;
+	/* background-color: #fff; */
+	float: left;
+	clear: left;
+}
+
+#nav ul li {
+	float: left;
+	display: inline; /*For ignore double margin in IE6*/
+	margin: 0 10px;
+    text-transform: capitalize;
+}
+
+#nav ul li a {
+	text-decoration: none;
+	float:left;
+	color: #999;
+	cursor: pointer;
+	font: 900 14px/22px "Arial", Helvetica, sans-serif;
+}
+
+#nav ul li a span {
+	margin: 0 10px 0 -10px;
+	padding: 1px 8px 5px 18px;
+	position: relative; /*To fix IE6 problem (not displaying)*/
+	float:left;
+}
+
+#nav ul li a.current {
+ 	color: #576d07;
+	background: url(../images/green.png) no-repeat top right;
+}
+
+#nav ul li a:hover  {
+ 	color: #576d07;
+	background: url(../images/green.png) no-repeat right top; 
+}
+
+#nav ul li a.current span {
+	background: url(../images/green.png) no-repeat top left;
+}
+
+#nav ul li a:hover span {
+	background: url(../images/green.png) no-repeat left top;
+}
+ 
+/* code (line numbering, syntax highlight is in "pygments.css") */
+.codeblock {
+    margin: 1em;
+    overflow: hidden;
+    border: solid 1px #ddd;
+    padding: 0 0 0 0;
+    background-color: white;
+}
+
+.lineno {
+    float: left; 
+    /* font-family: "Courier New", monospace; */
+    color: #555;
+    padding-right: 0.1em;
+    /*
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    */
+    margin-right: 0.5em;
+    border-right: solid 1px #ddd;
+    /* margin-top: 0px; */
+    width: 30px;
+    text-align: right;
+    background: #d2f5a7;
+    /* background: #d3f97c; */
+}
+
+.lineno pre {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+/* footer */
+#footer .footer-head {
+    margin-bottom: 1em;
+    /* color: #a4cb08; */
+    color: #79bd00;
+    font-size: 1.1em;
+}
+
+#footer ul {
+    list-style-type: square;
+}
+
+#footer a {
+    text-decoration: none;
+    color: black;
+}
+
+#footer a:hover {
+    color: #a4cb08;
+}
+
+#footer a:visited {
+    color: gray; 
+
+}
+
+#footer-logo {
+    float: right;
+}
+
+p + p {
+    text-indent: 0;
+    margin-top: 0em;
+}
+
+/* "info" block */
+.info {
+    padding: 1em;
+    margin: 1em 1em 1em 1em;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    border-left: 0;
+    border-right: 0;
+    color: black;
+
+}
+
+.info-warning {
+    padding: 1em;
+    margin: 1em 1em 1em 1em;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    background-color: #fcc;
+    border-left: 0;
+    border-right: 0;
+}
+
+.info-exercise {
+    padding: 1em 1em 0em 1em; 
+    margin: 1em 1em 1em 1em;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    background-color: #ffc;
+    border-left: 0;
+    border-right: 0;
+}
+
+.info-recall {
+    padding: 1em;
+    margin: 1em 1em 1em 1em;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    background-color: #eee;
+    border-left: 0;
+    border-right: 0;
+    color: black;
+}
+
+.info:first-line {
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.info-exercise:before {
+    content: "Exercise";
+    margin-bottom: 1em;
+    font-weight: bold;
+    font-size: 1.2em;
+    display: block;
+}
+
+
+.hint {
+    display: none;
+}
+
+/* Error */
+.general-error {
+    font-weight: bold;
+    font-size: 1.5em;
+    color: red;
+}
+
+/* disclose tag */
+.disclose {
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+}
+
+.disclose-text {
+    display: none;
+    padding: 1em;
+    margin: 1em 1em 1em 1em;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    background-color: #eee;
+    border-left: 0;
+    border-right: 0;
+    color: black;
+}
+
+.disclose-link {
+    text-decoration: none;
+    font-size: 1.2em;
+}
+
+.disclose-key {
+    display: none;
+}
+
+.disclose-error {
+    display: none;
+    color: red;
+    left-margin: 2em;
+}

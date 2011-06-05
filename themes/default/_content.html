@@ -1,0 +1,57 @@
+{% extends "_layout.html" %}
+
+{% block content %}
+    {{ content }} 
+{% endblock content %}
+
+
+{% block header %}
+    <h1>{{ course_title }}</h1>
+    <h2 class="alt">{{ lesson_part }} : {{ lesson_title }}</h2>
+{% endblock header %}
+
+{% block nav %}
+    <ul>
+    <!-- taken from the great tutorial at: http://kailoon.com/css-sliding-door-using-only-1-image/ -->
+    {% for menu in navlist %}
+        <li><a href="{{ menu[0] }}" 
+                {% if menu[1] == current %}
+                    class="current" 
+                {% endif %}>
+                <span>{{ menu[1] }}</span>
+            </a>
+        </li>
+    {% endfor %}
+    </ul>
+{% endblock nav %}
+
+{% block footer %}
+    <hr />
+    <div class="span-7">
+        <div class="footer-head"><b>{{ footer_col1_title }}</b></div>
+        <ul>
+            {% for item in footer_col1 %}
+                <li><a href="{{ item[1] }}">{{ item[0] }}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="span-7">
+        <div class="footer-head"><b>{{ footer_col2_title }}</b></div>
+        <ul>
+            {% for item in footer_col2 %}
+                <li><a href="{{ item[1] }}">{{ item[0] }}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="span-6">
+        <div class="footer-head"><b>{{ footer_col3_title }}</b></div>
+        <ul>
+            {% for item in footer_col3 %}
+                <li><a href="{{ item[1] }}">{{ item[0] }}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="span-4 last"> 
+        <img id="footer-logo" src="themes/default/images/HTML5.png">
+    </div>
+{% endblock footer %}

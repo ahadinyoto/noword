@@ -1,0 +1,32 @@
+h1. noword
+
+A simple offline "textile" to HTML converter with syntax highlighting, and other goodies.
+
+It's intended for generating course documents (I'm using it for teaching), but should generic enough for any purpose. 
+
+The way it works is first to write a document in _textile_ format, and then run "noword.py" to generate the HTML document.
+
+Still work in progress but current features:
+
+* Syntax highlighting using Pygments
+* Easy to generate text boxes
+* Partially encrypted content using AES. It's useful to, say, put a solution to an exercise as part of the document, but it's only viewable when the key is entered
+* Works as either standalone documents (opened using file:///) or using httpprotocol
+* If http protocol is used, it's automatically using HTML5 "localStorage" to store the key which could successfully decrypt. Hence, no more key entry for when the document is reloaded or opened
+* HTML5 offline mode for http protocol
+* Fully extensible
+
+h2. Usage
+
+<pre>
+./noword.py -i source_dir -o output_dir
+</pre>
+
+Please check the "test/publish" for example.
+
+h2. Dependencies
+
+* pygments
+* lxml
+
+
