@@ -22,6 +22,7 @@ import traceback
 import time
 import types
 import argparse
+import pprint
 
 from lxml import etree, html
 from StringIO import StringIO
@@ -125,7 +126,7 @@ class Controller:
         data.update(vartorender)
         return view.render(data)
             
-class Tedi:
+class NoWord:
     """A wrapper class to manage files and outputs"""
 
     def get_result(self):
@@ -180,11 +181,12 @@ class Tedi:
                 if i.startswith("__") and i.endswith("__"):
                     continue
                 attr = getattr(conf, i)
-                if type(attr) == types.TupleType and len(attr) == 1:
-                    data[i] = attr[0]
+                if type(attr) == types.StringType:
+                    data[i] = attr
                 elif type(attr) in [types.TupleType, types.ListType]:
                     data[i] = attr
-        except ImportError:
+        except ImportError, ex:
+            print "Config not found - %s" % ex.message
             pass
 
         try:
@@ -275,6 +277,6 @@ if __name__ == '__main__':
         op.print_help() 
         sys.exit(1)
 
-    t = Tedi()
+    t = NoWord()
     t.publish(ns.indir, ns.outdir)
 

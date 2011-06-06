@@ -1,127 +1,18 @@
-body {
-    background-image: -webkit-gradient(
-        linear,
-        left top,
-        left bottom,
-        color-stop(0.2, #f0f0f0),
-        color-stop(0.8, #ddd)
-    );
-    background-image: -moz-linear-gradient(
-        center bottom,
-        #ddd,
-        #f0f0f0
-    );
-    
-}
-
 .container {
     background-color: #fff;
-    padding: 1.5em;
-    border-left: 1px solid #ccc;
-    border-right: 1px solid #ccc;
-}
-
-#header-block h1 {
-    /* color: #4d7a32; */
-    color: #413cb0;
-}
-
-#header-block h2 {
-    color: #444;
-    border-bottom: 0px;
-}
-
-#header-block .container {
-    background-image: -webkit-gradient(
-        linear,
-        left bottom,
-        left top,
-        color-stop(0.8, #fce138),
-        color-stop(0.2, #f5b824)
-    );
-    background: -moz-linear-gradient(
-        center bottom,
-        #f5b824,
-        #fce138
-    );
+    /* padding: 1.5em; */
 }
 
 h2 {
     margin-top: 1em;
-    border-bottom: 1px solid #fce138;
 }
 
 /* Navigation */
 
 #nav {
-    /* 
-    border-top: 1px solid #ddd;
-    border-bottom: 1px solid #ddd;
-    */
-
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
-    box-shadow: 3px 3px 3px rgba(0,0,0,.5);
-    -moz-box-shadow: 3px 3px 3px rgba(0,0,0,.5);
-    -webkit-box-shadow: 3px 3px 3px rgba(0,0,0,.5);
-    height: 34px;
-    margin: 10px 0 10px 0;
-
+    display: none
 }
 
-#nav ul {
-    margin-right: auto;
-    margin-left: auto;
-	padding: 5px; 
-	/* margin: 10px 0; */
-	list-style: none;
-	/* background-color: #fff; */
-	float: left;
-	clear: left;
-}
-
-#nav ul li {
-	float: left;
-	display: inline; /*For ignore double margin in IE6*/
-	margin: 0 10px;
-    text-transform: capitalize;
-}
-
-#nav ul li a {
-	text-decoration: none;
-	float:left;
-	color: #999;
-	cursor: pointer;
-	font: 900 14px/22px "Arial", Helvetica, sans-serif;
-}
-
-#nav ul li a span {
-	margin: 0 10px 0 -10px;
-	padding: 1px 8px 5px 18px;
-	position: relative; /*To fix IE6 problem (not displaying)*/
-	float:left;
-}
-
-#nav ul li a.current {
- 	color: #576d07;
-	background: url(../images/green.png) no-repeat top right;
-}
-
-#nav ul li a:hover  {
- 	color: #576d07;
-	background: url(../images/green.png) no-repeat right top; 
-}
-
-#nav ul li a.current span {
-	background: url(../images/green.png) no-repeat top left;
-}
-
-#nav ul li a:hover span {
-	background: url(../images/green.png) no-repeat left top;
-}
- 
 /* code (line numbering, syntax highlight is in "pygments.css") */
 .codeblock {
     margin: 1em;
@@ -136,17 +27,11 @@ h2 {
     /* font-family: "Courier New", monospace; */
     color: #555;
     padding-right: 0.1em;
-    /*
-    padding-top: 0.5em;
-    padding-bottom: 0.5em;
-    */
     margin-right: 0.5em;
     border-right: solid 1px #ddd;
-    /* margin-top: 0px; */
     width: 30px;
     text-align: right;
     background: #d2f5a7;
-    /* background: #d3f97c; */
 }
 
 .lineno pre {
@@ -155,33 +40,8 @@ h2 {
 }
 
 /* footer */
-#footer .footer-head {
-    margin-bottom: 1em;
-    /* color: #a4cb08; */
-    color: #79bd00;
-    font-size: 1.1em;
-}
-
-#footer ul {
-    list-style-type: square;
-}
-
-#footer a {
-    text-decoration: none;
-    color: black;
-}
-
-#footer a:hover {
-    color: #a4cb08;
-}
-
-#footer a:visited {
-    color: gray; 
-
-}
-
-#footer-logo {
-    float: right;
+#footer {
+    display: none;
 }
 
 p + p {

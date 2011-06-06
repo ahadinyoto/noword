@@ -9,7 +9,8 @@
     <link rel="stylesheet" href="css/blueprint/ie.css" type="text/css" media="screen, projection">
     <![endif]-->
     <link href="themes/{{ theme }}/css/pygments.css" media="all" rel="stylesheet" type="text/css" />
-    <link href="themes/{{ theme }}/css/noword.css" media="all" rel="stylesheet" type="text/css" />
+    <link href="themes/{{ theme }}/css/noword.css" media="screen, projection" rel="stylesheet" type="text/css" />
+    <link href="themes/{{ theme }}/css/noword-print.css" media="print" rel="stylesheet" type="text/css" />
     <link href="me/css/custom.css" media="all" rel="stylesheet" type="text/css" />
     <script src="lib/js/jquery.js"></script>
     <script src="lib/js/aes.js"></script>
@@ -22,18 +23,21 @@
 </head>
 
 <body>
-    <div class="container">
-        <div class="span-24 last" id="nav">
-            {% block nav %}
-            {% endblock nav %}
-        </div>
-
+    <div id="header-block">
+        <div class="container">
         {% block header %}
         <h1>Object Oriented Programming</h1>
         <h2 class="alt">Week 1 - Sample Problem</h2>
         {% endblock header %}
-        
-        <hr />
+        </div>
+    </div>
+
+    <div class="container">
+
+        <div class="span-24 last" id="nav">
+            {% block nav %}
+            {% endblock nav %}
+        </div>
 
         <div class="span-24 last" id="content">
             {% block content %}
