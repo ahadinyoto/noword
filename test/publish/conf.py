@@ -1,5 +1,6 @@
 # This will get passed to the Jinja2 template (_content.html) directly
 
+theme = "default"
 course_title = "C105 Introduction to Programming"
 lesson_title = "Intro to Python"
 lesson_part = "Week 1"

@@ -21,14 +21,12 @@ bc.. {- xml -}
 </a>
 
 bc.. {- info -}
-<p>Title Here</p>
+Title Here
 
 Cras posuere est in nulla luctus in fringilla purus cursus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec at libero augue. In gravida consectetur elementum. Suspendisse at egestas elit. Aliquam porttitor porta tellus, sed ultrices erat ultricies sit amet. Vivamus vel eros vitae enim sollicitudin porta at laoreet neque. 
 
-<pre>
 # one
 # two
-</pre>
 
 bc.. {- info@recall -}
 Python note:

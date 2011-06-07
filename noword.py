@@ -198,7 +198,7 @@ class NoWord:
         return data
 
     # Todo: broken. Needs publishing mechanism (can't handle recursive dir yet)
-    def publish(self, indir, outdir, theme="default"):
+    def publish(self, indir, outdir): 
         self.indir = indir
         self.outdir = outdir
 
@@ -222,9 +222,14 @@ class NoWord:
         # navlist[0] => htmlfile name
         # navlist[1] => docname (html file without .html extension)
         data.update({"navlist": [ (i[1],i[2]) for i in txlfiles]})
+        theme = "default"
+        if data.has_key("theme") and len(data['theme']) > 0:
+            theme = data['theme']
+        print "Using theme: %s" % theme
 
         for f in txlfiles:
             # f[0] => txl file, f[1] => html file, f[2] => docname
+            print "Processing: %s\n .. Output: %s" % (f[0], f[1])
             outf = open("%s/%s" % (outdir, f[1]), "wb")
             data.update({"current" : f[2]})
             self.convert("%s/%s" % (indir, f[0]), data, theme=theme, output=outf)

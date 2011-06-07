@@ -198,7 +198,7 @@ p + p {
     border-left: 0;
     border-right: 0;
     color: black;
-    white-space: pre;
+    white-space: pre-wrap;
 }
 
 .info-warning {
@@ -209,7 +209,7 @@ p + p {
     background-color: #fcc;
     border-left: 0;
     border-right: 0;
-    white-space: pre;
+    white-space: pre-wrap;
 }
 
 .info-exercise {
@@ -220,7 +220,7 @@ p + p {
     background-color: #ffc;
     border-left: 0;
     border-right: 0;
-    white-space: pre;
+    white-space: pre-wrap;
 }
 
 .info-recall {
@@ -232,7 +232,7 @@ p + p {
     border-left: 0;
     border-right: 0;
     color: black;
-    white-space: pre;
+    white-space: pre-wrap;
 }
 
 .info-output{
@@ -245,10 +245,16 @@ p + p {
     border-right: 0;
     color: black;
     font-family: 'andale mono', 'lucida console', monospace;
-    white-space: pre; 
+    white-space: pre-wrap; 
 }
 
-.info:first-line, .info-exercise:first-line {
+.info:first-line {
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+
+.info-exercise:first-line {
     font-weight: bold;
     font-size: 1.2em;
 }
