@@ -1,4 +1,5 @@
 body {
+    font-size: 0.8em;
     background-image: -webkit-gradient(
         linear,
         left top,
@@ -21,17 +22,21 @@ body {
     border-right: 1px solid #ccc;
 }
 
+
 #header-block h1 {
     /* color: #4d7a32; */
     color: #413cb0;
+    text-shadow: #888 1px 1px 3px; 
 }
 
 #header-block h2 {
     color: #444;
     border-bottom: 0px;
+    text-shadow: #888 1px 1px 3px; 
 }
 
 #header-block .container {
+    padding-bottom: 0.2em;
     background-image: -webkit-gradient(
         linear,
         left bottom,
@@ -67,8 +72,7 @@ h2 {
     -moz-box-shadow: 3px 3px 3px rgba(0,0,0,.5);
     -webkit-box-shadow: 3px 3px 3px rgba(0,0,0,.5);
     height: 34px;
-    margin: 10px 0 10px 0;
-
+    margin: 5px; 0 10px 0;
 }
 
 #nav ul {
