@@ -22,6 +22,12 @@ _EncryptedList = []
 def _encrypt(key, plaintext):
     padsize = 16 - (len(key) % 16)
     padded_key = key + ("." * padsize)
+
+    # Pad with "\r" for string shorter than 66 (I don't know why)
+    if len(plaintext) < 66:
+        padsize = 66 - len(plaintext)
+        plaintext += padsize * "\r"
+
     cipher = aes.encryptData(padded_key, plaintext) 
     cipher_text = base64.encodestring(cipher)
     return cipher_text
@@ -50,6 +56,8 @@ def convert(text, attrib=None, withlineno=False):
     atext = "Hint"
     password  = None
 
+    js_decrypt = "false"
+    attrib_text = ""
     if attrib:
         attrib = re.sub(r"^@", "", attrib)
         attlist = attrib.split(",")
@@ -64,7 +72,6 @@ def convert(text, attrib=None, withlineno=False):
         (attrib_text, key) = attlist
 
         # Prepend the id. This id string will be compared after decryption to check if it's successful
-        js_decrypt = "false"
         if key:
             text_with_id = ("{{%s}}" % genid) + text
             cipher_text = _encrypt(key, text_with_id)
@@ -80,7 +87,7 @@ def convert(text, attrib=None, withlineno=False):
                 &nbsp;&nbsp;<span class="disclose-error" id="%s-error"></span>
                 </div>\n
             """ % (genid, genid, genid, genid)
-    html += """<div class="disclose-text" id="%s-text">\n%s\n</div>\n
+    html += """<div class="disclose-text" id="%s-text">%s</div>\n
                </div>\n
             """ % (genid, text)
 

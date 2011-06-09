@@ -32,6 +32,13 @@ from jinja2 import Template, FileSystemLoader, Environment
 MANIFEST_NAME = "noword.manifest"
 WEBSERVER_CONFIG = "%s/apache/.htaccess" % LIB_PATH
 
+def get_exec_path():
+    dirname = os.path.dirname(sys.argv[0])
+    _path = "."
+    if len(dirname) > 0:
+        _path = dirname 
+    return _path
+
 class Model:
     """The class that handles textile and its conversion to DOM"""
     
@@ -78,7 +85,8 @@ class View:
     """The class that handles processed DOM into its HTML view"""
 
     def __init__(self, theme="default"):
-        loader = FileSystemLoader("themes/%s" % theme)
+        self._path = get_exec_path()
+        loader = FileSystemLoader("%s/themes/%s" % (self._path, theme))
         self.env = Environment(loader=loader)
 
     def add_wrapper(self, str):
@@ -92,7 +100,8 @@ class View:
         if match:
             lf = match.group(1)
             attrib = match.group(2)
-            module_ = __import__(lf + "lf")
+            sys.path.insert(0, "%s/lib" % self._path)
+            module_ = __import__("%slf" % lf)
             codetext = re.sub(r"{-\s+\w+(@.*)?\s+-}", "", codetext)
             converted_text += module_.lexform.convert(codetext, attrib, withlineno)
 
@@ -170,7 +179,8 @@ class NoWord:
         f.write(files)
 
     def config_webserver(self, outdir, config=WEBSERVER_CONFIG):
-        shutil.copy(WEBSERVER_CONFIG, outdir)
+        _path = get_exec_path()
+        shutil.copy("%s/%s" % (_path, WEBSERVER_CONFIG), outdir)
 
     def __read_conf(self, confname='conf'):
         data = {}
@@ -241,18 +251,17 @@ class NoWord:
             return False
 
         # calling "rmtree", so you know it's dangerous
-        codepath = os.path.dirname(sys.argv[0])
-        if len(codepath) == 0:
-            codepath = "."
-        srctheme = "%s/themes/%s" % (codepath, theme)
+        _path = get_exec_path()
+        srctheme = "%s/themes/%s" % (_path, theme)
         outtheme = "%s/themes/%s" % (outdir, theme)
         if (os.path.exists(outtheme)):
             shutil.rmtree(outtheme)
 
         shutil.copytree(srctheme, outtheme)
 
-        srclib = "%s/%s/js" % (LIB_PATH, codepath)
+        srclib = "%s/%s/js" % (_path, LIB_PATH) # , _path)
         outlib = "%s/%s/js" % (outdir, LIB_PATH)
+
         if (os.path.exists(outlib)):
             shutil.rmtree(outlib)
 

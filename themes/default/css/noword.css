@@ -217,7 +217,7 @@ p + p {
 }
 
 .info-exercise {
-    padding: 1em 1em 0em 1em; 
+    padding: 0.5em 1em 0em 1em; 
     margin: 1em 1em 1em 1em;
     border-top: 1px solid #ccc;
     border-bottom: 1px solid #ccc;
@@ -293,14 +293,16 @@ p + p {
 
 .disclose-text {
     display: none;
-    padding: 1em;
-    margin: 1em 1em 1em 1em;
+    padding: 0 1em 0 1em;
+    /* margin: 1em 1em 1em 1em; */
     border-top: 1px solid #ccc;
     border-bottom: 1px solid #ccc;
     background-color: #eee;
     border-left: 0;
     border-right: 0;
     color: black;
+    white-space: pre-wrap;
+    font-family: 'andale mono', 'lucida console', monospace;
 }
 
 .disclose-link {
@@ -316,4 +318,20 @@ p + p {
     display: none;
     color: red;
     left-margin: 2em;
+}
+
+/* table */
+
+table {
+    border: 1px solid #ccc;
+    border-collapse: collapse;
+    width: 0px;
+}
+
+td, th {
+    border: 1px solid #ddd;
+}
+
+th {
+    background-color: #eee;
 }

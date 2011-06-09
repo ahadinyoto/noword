@@ -61,3 +61,9 @@ bc.. {- disclose@Quiz Solution,abcdef -}
 Solution is here
 
 Donec hendrerit bibendum consequat. Donec tristique orci in turpis blandit ut aliquet leo luctus. Ut sed nunc vel diam rhoncus congue. Suspendisse potenti. Nam semper tellus a leo hendrerit nec feugiat erat luctus. Fusce interdum tincidunt iaculis. Nam diam odio, rhoncus porta sodales et, ultrices hendrerit sapien. In porttitor dapibus placerat. In ornare neque eu tortor tincidunt rhoncus. Phasellus eleifend, ipsum eleifend consequat porta, ipsum mi lacinia massa, nec faucibus sapien sapien tempor sem. Integer placerat est vel nisl tristique tempus viverra mi varius. Pellentesque aliquet condimentum commodo. Aliquam laoreet diam nec nibh accumsan posuere. Aliquam eget odio tortor. Vivamus luctus augue interdum urna volutpat sollicitudin at id dui. Fusce lacinia velit est, sed molestie ante. Nullam non risus sit amet purus pharetra ullamcorper. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Morbi eu mi nibh.
+
+h2. Table test
+
+|_. Col 1|_. Col 2|
+|Test 1|Test 2|
+|Test 3|Test 4|
