@@ -227,7 +227,7 @@ p + p {
     white-space: pre-wrap;
 }
 
-.info-recall {
+.info-note {
     padding: 1em;
     margin: 1em 1em 1em 1em;
     border-top: 1px solid #ccc;
@@ -325,8 +325,7 @@ p + p {
 table {
     border: 1px solid #ccc;
     border-collapse: collapse;
-/*    width: 0px; */
-    width: 100%;
+    width: auto; 
 }
 
 td, th {
@@ -336,3 +335,9 @@ td, th {
 th {
     background-color: #eee;
 }
+
+.ruby-instance-var {
+   font: 1em 'andale mono', 'lucida console', monospace;
+   line-height: 1.5;
+}
+

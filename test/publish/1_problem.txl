@@ -64,6 +64,6 @@ Donec hendrerit bibendum consequat. Donec tristique orci in turpis blandit ut al
 
 h2. Table test
 
-|_. Col 1|_. Col 2|
-|Test 1|Test 2|
-|Test 3|Test 4|
+|_. Col 1 |_. Col 2 |
+|Test 1 |Test 2 |
+|Test 3 |Test 4 |
