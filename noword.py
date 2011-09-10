@@ -23,6 +23,7 @@ import time
 import types
 import argparse
 import pprint
+import zipfile
 
 from lxml import etree, html
 from StringIO import StringIO
@@ -270,15 +271,46 @@ class NoWord:
         self.create_manifest(outdir)
         self.config_webserver(outdir)
 
+# -- Functions ---
+
+def zipper(outdir, filename):
+    """Zip the outdir by removing everything except for basename for dirname"""
+    filelist = []
+    dirname = os.path.dirname(outdir)
+
+    if not filename.endswith(".zip"):
+        filename += ".zip"
+
+    try:
+        for node in os.walk(outdir):
+            if len(node[2]) > 0:
+                for f in node[2]:
+                    filelist.append(os.path.join(node[0],f))
+            else:
+                filelist.append(node[0])
+
+        with zipfile.ZipFile(filename, "w") as z:
+            for node in filelist:
+                arcname = re.sub(r"%s/(.*)" % dirname, r"\1", node)
+                z.write(node, arcname)
+
+    except Exception, ex:
+        print "ERROR! zipping file %s failed because %s" % (filename, ex)
+    
+
 if __name__ == '__main__':
     usage = """
-    %prog -i inputdir -o outputdir 
-    %prog --indir inputdir --outdir outputdir 
+    %prog -i inputdir -o outputdir [-z filename.zip]
+    %prog --indir inputdir --outdir outputdir [--zip filename.zip]
     %prog -h 
     """
     op = argparse.ArgumentParser(description="Convert 'textile' to 'html' with some goodies.")
-    op.add_argument("-i", "--indir", dest="indir", help="Input directory containing .txl files, and it'll be processed recursively")
-    op.add_argument("-o", "--outdir", dest="outdir", help="Output directory where the generated .html files will be stored")
+    op.add_argument("-i", "--indir", dest="indir", 
+            help="Input directory containing .txl files, and it'll be processed recursively.")
+    op.add_argument("-o", "--outdir", dest="outdir", 
+            help="Output directory where the generated .html files will be stored")
+    op.add_argument("-z", "--zip", dest="zipfile", 
+            help="Compress the output as zip file.")
 
     has_opts = False
     if len(sys.argv) > 1:
@@ -291,6 +323,11 @@ if __name__ == '__main__':
         op.print_help() 
         sys.exit(1)
 
-    t = NoWord()
-    t.publish(ns.indir, ns.outdir)
+    nw = NoWord()
+    nw.publish(ns.indir, ns.outdir)
+
+    zfile = None
+    if ns.zipfile != None:
+        zipper(ns.outdir, ns.zipfile)
+        print "Zipping:", ns.zipfile
 
