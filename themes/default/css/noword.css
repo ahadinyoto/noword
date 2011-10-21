@@ -345,3 +345,18 @@ th {
    line-height: 1.5;
 }
 
+.powershell{
+   border-style: solid;
+   border-color: #ddd;
+   border-width: 2px;
+   margin: 1em 1em 1em 1em;
+   padding: 1em 1em;
+   background-color: #012456;
+   color: white;
+   font-size: 1.1em;
+   font-family: "Courier New", monospace;
+   overflow: auto;
+   -webkit-border-radius: 10px;
+   -moz-border-radius: 10px;
+   border-radius: 10px;
+}
