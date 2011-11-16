@@ -28,5 +28,8 @@ h2. Dependencies
 
 * pygments
 * lxml
+* Jinja2
 
+h2. TODOS
 
+* Adding syntax highlighting for certain type of boxes. In this case disclose
