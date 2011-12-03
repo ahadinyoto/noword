@@ -133,7 +133,7 @@ h2 {
 /* code (line numbering, syntax highlight is in "pygments.css") */
 .codeblock {
     margin: 1em;
-    overflow: hidden;
+    overflow: auto;
     border: solid 1px #ddd;
     padding: 0 0 0 0;
     background-color: white;
@@ -359,4 +359,5 @@ th {
    -webkit-border-radius: 10px;
    -moz-border-radius: 10px;
    border-radius: 10px;
+   white-space: pre-wrap;
 }

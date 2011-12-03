@@ -127,10 +127,14 @@ class Controller:
             html_code = view.code_view(pre_no_codes, withlineno)
 
             # convert html_code to DOM elements to be reinserted back into the tree
-            element = html.fromstring(html_code)
-            codes_pre_parent = codes[0].getparent()
-            codes_pre_grandparent = codes_pre_parent.getparent()
-            codes_pre_grandparent.replace(codes_pre_parent, element)
+            try:
+                element = html.fromstring(html_code)
+                codes_pre_parent = codes[0].getparent()
+                codes_pre_grandparent = codes_pre_parent.getparent()
+                codes_pre_grandparent.replace(codes_pre_parent, element)
+            except Exception, ex:
+                print "Error:", ex
+                print "On text:", pre_no_codes
 
         data = { "content": model.doc_tostring(), "theme": theme }
         data.update(vartorender)
